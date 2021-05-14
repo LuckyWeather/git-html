@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wangEditor demo</title>
+</head>
+<body>
+    <button onclick="javascript:getHtml()" style="background: yellow;font-size: 20px;">Run</button>
+    <table>
+        <tr>
+            <td>
+                <div id="editor" style="width: 650px;">
+                    <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+                </div>
+            </td>
+            <td>
+                <div  style="width: 650px;">
+                    <textarea id="html_content" cols="70" rows="25" >生成的html内容</textarea>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/wangeditor@4.7.0/dist/wangEditor.min.js"></script>
+    <script type="text/javascript">
+        var E = window.wangEditor;
+        var editor = new E('#editor');
+        editor.create();
+
+        function getHtml(){
+            document.getElementById('html_content').value = editor.txt.html();
+        };
+    </script>
+</body>
+</html
