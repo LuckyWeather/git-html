@@ -5,6 +5,8 @@
     <title>wangEditor demo</title>
 </head>
 <body>
+    宽<input type="text" id="content_width">
+    <button onclick="javascript:setWidth()" style="background:cornflowerblue;font-size: 20px;">设置</button>
     <button onclick="javascript:getHtml()" style="background: yellow;font-size: 20px;">Run</button>
     <table>
         <tr>
@@ -26,8 +28,13 @@
     <script type="text/javascript">
         var E = window.wangEditor;
         var editor = new E('#editor');
+        editor.config.height = 500
         editor.create();
-
+        function setWidth(){
+            var obj = document.getElementById('editor');
+            var content_width = document.getElementById('content_width').value
+            obj.style.width = content_width+"px";
+        };
         function getHtml(){
             document.getElementById('html_content').value = editor.txt.html();
         };
