@@ -7,8 +7,15 @@
 <body>
     宽<input type="text" id="content_width">
     <button onclick="javascript:setWidth()" style="background:cornflowerblue;font-size: 20px;">设置</button>
-    <button onclick="javascript:getHtml()" style="background: yellow;font-size: 20px;">Run</button>
     <table>
+        <tr>
+            <td>
+                <button onclick="javascript:getHtml()" style="background: yellow;font-size: 20px;">转化html</button>
+            </td>
+            <td>
+                <button onclick="javascript:getContent()" style="background: yellow;font-size: 20px;">转化富文本</button>
+            </td>
+        </tr>
         <tr>
             <td>
                 <div id="editor" style="width: 650px;">
@@ -37,6 +44,9 @@
         };
         function getHtml(){
             document.getElementById('html_content').value = editor.txt.html();
+        };
+        function getContent(){
+            editor.txt.html(document.getElementById('html_content').value);
         };
     </script>
 </body>
